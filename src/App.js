@@ -1,7 +1,9 @@
+import HooksExpepriment from "./components/hooksexperiment/HooksExperiment";
+
 function App() {
   return (
     <>
-      <h1>learn-react</h1>
+      <HooksExpepriment />
     </>
   );
 }
