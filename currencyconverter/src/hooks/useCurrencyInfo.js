@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 
 function useCurrencyInfo(currency = "npr") {
@@ -16,12 +15,13 @@ function useCurrencyInfo(currency = "npr") {
     fetch(
       `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${date}/v1/currencies/${currency}.json`
     )
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((res) => res.json())
+      .then((res) => setData(res[currency]))
       .catch((error) => {
         console.error("error to fetch data", error);
       });
-  }, [currency, date]);
+  }, [currency]);
+  return data;
 }
 
 export default useCurrencyInfo;
