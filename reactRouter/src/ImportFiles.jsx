@@ -4,5 +4,6 @@ import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
+import User from "./components/User/User.jsx";
 
-export { Layout, Header, Home, About, Contact, Footer };
+export { Layout, Header, Home, About, Contact, User, Footer };
