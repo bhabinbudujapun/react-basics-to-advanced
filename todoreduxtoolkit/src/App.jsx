@@ -8,6 +8,7 @@ function App() {
         <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
           <h1 className="text-2xl text-white font-bold text-center mb-8 mt-2">
             Learn about ReduxToolKit
+            <h2>Todo-App</h2>
           </h1>
           <AddTodo />
           <Todo />
