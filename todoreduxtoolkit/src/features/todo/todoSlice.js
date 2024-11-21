@@ -9,6 +9,7 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
+      if (!action.payload.trim()) return;
       const todo = {
         id: nanoid(),
         text: action.payload,
