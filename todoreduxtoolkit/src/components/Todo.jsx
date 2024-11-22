@@ -51,11 +51,7 @@ function Todos() {
                 <div className="text-white">{todo.text}</div>
                 <div>
                   <button
-                    onClick={() =>
-                      handleUpdateClick(
-                        dispatch(updateTodo({ id: todo.id, text: todo.text }))
-                      )
-                    }
+                    onClick={() => handleUpdateClick(todo.id, todo.text)}
                     className="text-white bg-red-500 border-0 m-1 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md">
                     <i className="fa-regular fa-pen-to-square"></i>
                   </button>
