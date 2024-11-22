@@ -23,7 +23,7 @@ export const todoSlice = createSlice({
 
     updateTodo: (state, action) => {
       const { id, text } = action.payload;
-      console.log(id, text);
+      // console.log(id, text);
       state.todos = state.todos.map((todo) =>
         todo.id === id ? { ...todo, text } : todo
       );
