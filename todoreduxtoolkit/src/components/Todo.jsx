@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateTodo, removeTodo } from "../features/todo/todoSlice";
 
@@ -42,8 +42,8 @@ function Todos() {
                 <button
                   type="submit"
                   onClick={() => handleSaveClick(todo.id)}
-                  className="text-white bg-green-500 border-0 py-1 px-4 focus:outline-none hover:bg-green-600 rounded text-md">
-                  Save
+                  className="text-white bg-green-500 border-0 m-1 py-1 px-4 focus:outline-none hover:bg-green-600 rounded text-md">
+                  <i className="fa-regular fa-floppy-disk"></i>
                 </button>
               </>
             ) : (
@@ -52,8 +52,8 @@ function Todos() {
                 <div>
                   <button
                     onClick={() => handleUpdateClick(todo.id, todo.text)}
-                    className="text-white bg-red-500 border-0 m-1 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md">
-                    <i className="fa-regular fa-pen-to-square"></i>
+                    className="text-white bg-sky-600 border-0 m-1 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md">
+                    <i className="fa-regular fa-pen-to-square" />
                   </button>
                   <button
                     onClick={() => dispatch(removeTodo(todo.id))}
