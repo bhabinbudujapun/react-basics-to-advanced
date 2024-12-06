@@ -8,6 +8,7 @@ import Button from "./Button";
 import Login from "./Login";
 import Input from "./Input";
 import RTE from "./RTE";
+import PostForm from "./post-form/PostForm";
 
 export {
   container,
@@ -16,6 +17,7 @@ export {
   Input,
   RTE,
   PostCard,
+  PostForm,
   Login,
   Signup,
   AuthLayout,
