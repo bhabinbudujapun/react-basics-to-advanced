@@ -1,17 +1,39 @@
 import "./App.css";
+import { Outlet } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import authService from "./appwrite/auth";
+import { Header, Footer } from "./components";
+import { login, logout } from "./store/authSlice";
+import React, { useState, useEffect } from "react";
 
 function App() {
-  // console.log(import.meta.env.VITE_APPWRITE_URL);
-  // console.log(import.meta.env.VITE_APPWRITE_BUCKET_ID);
-  // console.log(import.meta.env.VITE_APPWRITE_PROJECT_ID);
+  const [loding, setLoding] = useState(true);
+  const dispatch = useDispatch();
 
-  return (
-    <>
-      <div className="bg-gray-500">
-        <h1 className="text-white text-2xl py-3">A blog app with appwrite</h1>
+  useEffect(() => {
+    authService
+      .getCurrentUser()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login(userData));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .finally(() => setLoding(false));
+  }, []);
+
+  return !loding ? (
+    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
+      <div className="w-full block">
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
       </div>
-    </>
-  );
+    </div>
+  ) : null;
 }
 
 export default App;
