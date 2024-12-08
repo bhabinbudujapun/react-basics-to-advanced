@@ -2,9 +2,9 @@ import "./index.css";
 import React from "react";
 import App from "./App.jsx";
 import { Provider } from "react-redux";
+import store from "./store/store.js";
 import { createRoot } from "react-dom/client";
-import { RouterProvider } from "react-redux";
-import { AuthLayout, Login } from "./components/index.js";
+import { AuthLayout } from "./components/index.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AddPost from "./components/Pages/AddPost.jsx";
