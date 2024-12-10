@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import appwriteService from "../../appwrite/config";
-import { Container, PostCard } from "../components";
+import { Container, PostForm } from "../../components";
 
 function AllPost() {
   const [posts, setPosts] = useState([]);
@@ -22,7 +22,8 @@ function AllPost() {
           {posts.map((post) => {
             <div key={post.$id} className="p-2 w-1/4">
               <PostCard {...post} />
-            </div>;``
+            </div>;
+            ``;
           })}
         </div>
       </Container>
