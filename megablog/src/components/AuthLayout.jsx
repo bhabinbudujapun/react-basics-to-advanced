@@ -9,14 +9,14 @@ function Protected({ children, authentication = true }) {
 
   useEffect(() => {
     if (authStatus && authStatus !== authentication) {
-      useNavigate("/login");
+      navigate("/login");
     } else if (!authentication && authStatus !== authentication) {
       navigate("/");
     }
     setLoader(false);
   }, [authStatus, navigate, authentication]);
 
-  return loader ? <h1>loding...</h1> : <>children</>;
+  return loader ? <h1>Loading...</h1> : <>{children}</>;
 }
 
 export default Protected;
