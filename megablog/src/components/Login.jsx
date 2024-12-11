@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin } from "../store/authSlice";
 import authService from "../appwrite/auth";
 import { useDispatch } from "react-redux";
-import { Button, Input } from "./index";
+import { Button, Input, Logo } from "./index";
+import { useForm } from "react-hook-form";
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
 
   const login = async (data) => {
@@ -29,7 +31,7 @@ function Login() {
       <div className="mx-auto w-full max-w-lg bg-gray-100 rounded p-10 border border-black/10">
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w[100px]">
-            <logo width="100%" />
+            <Logo width="100%" />
           </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">
