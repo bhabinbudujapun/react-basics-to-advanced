@@ -7,7 +7,7 @@ import { login, logout } from "./store/authSlice";
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [loding, setLoding] = useState(true);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,20 +15,20 @@ function App() {
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
-          dispatch(login(userData));
+          dispatch(login({ userData }));
         } else {
           dispatch(logout());
         }
       })
-      .finally(() => setLoding(false));
+      .finally(() => setLoading(false));
   }, []);
 
-  return !loding ? (
+  return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
         <Header />
         <main>
-          <Outlet />
+          TODO: <Outlet />
         </main>
         <Footer />
       </div>
