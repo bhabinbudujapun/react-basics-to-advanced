@@ -44,7 +44,7 @@ export class Service {
       console.log("Document created successfully:", document);
       return document;
     } catch (error) {
-      console.log("Appwrite serive :: createPost :: error", error);
+      console.log("Appwrite service :: createPost :: error", error);
     }
   }
 
@@ -62,7 +62,7 @@ export class Service {
         }
       );
     } catch (error) {
-      console.log("Appwrite serive :: updatePost :: error", error);
+      console.log("Appwrite service :: updatePost :: error", error);
     }
   }
 
@@ -101,7 +101,7 @@ export class Service {
         queries
       );
     } catch (error) {
-      console.log("Appwrite serive :: getPosts :: error", error);
+      console.log("Appwrite service :: getPosts :: error", error);
       return false;
     }
   }
@@ -114,7 +114,7 @@ export class Service {
         file
       );
     } catch (error) {
-      console.log("Appwrite serive :: uploadFile :: error", error);
+      console.log("Appwrite service :: uploadFile :: error", error);
       return false;
     }
   }
@@ -124,7 +124,7 @@ export class Service {
       await this.bucket.deleteFile(conf.appwriteBucketId, fileId);
       return true;
     } catch (error) {
-      console.log("Appwrite serive :: deleteFile :: error", error);
+      console.log("Appwrite service :: deleteFile :: error", error);
       return false;
     }
   }
