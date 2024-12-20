@@ -10,15 +10,15 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
       <Controller
         name={name || "content"}
         control={control}
-        render={({ field: { onchange } }) => (
+        render={({ field: { onChange } }) => (
           <Editor
-          apiKey={conf.appwriteTinyMCE}
+            apiKey={conf.appwriteTinyMCE}
             initialValue={defaultValue}
             init={{
               initialValue: defaultValue,
               height: 500,
               menubar: true,
-              Plugin: [
+              plugins: [
                 "image",
                 "advlist",
                 "autolink",
@@ -43,11 +43,12 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
               toolbar:
                 "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
               content_style:
-                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px } ",
+                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
             }}
-            onEditorChange={onchange}
+            onEditorChange={onChange}
           />
-        )}></Controller>
+        )}
+      />
     </div>
   );
 }
